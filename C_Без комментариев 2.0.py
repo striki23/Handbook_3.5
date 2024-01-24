@@ -9,7 +9,7 @@ def comments_clean(data):
     for line in data:
         new_line = ''
         for letter in line:
-            if letter == '#':
+            if letter == '#':  # коммент
                 is_comments = True
             elif not is_comments or letter == '\n':
                 new_line += letter
@@ -21,4 +21,7 @@ def comments_clean(data):
     print('\n'.join(clean_text).lstrip('\n'))
 
 
-comments_clean(lines)
+comments_clean(lines)  # commments
+
+# Взять индекс решетки, срезать символы
+# до решетки и очистить от пробелов с правой стороны.

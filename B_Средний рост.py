@@ -1,25 +1,33 @@
 from sys import stdin
 
-lines = stdin.readlines()
-
 
 def validation_data(data):
     for line in data:
-        name, last_height, new_height = line.rstrip("\n").split()
-        if not isinstance(name, str) or (
-                not last_height.isdigit()) or (
-                not new_height.isdigit()):
+        name, prev_height, new_height = line.rstrip("\n").split()
+        if (
+            not isinstance(name, str)
+            or not prev_height.isdigit()
+            or not new_height.isdigit()
+        ):
             raise TypeError
-        if last_height > new_height:
+
+        prev_height = int(prev_height)
+        new_height = int(new_height)
+        if prev_height > new_height:
             raise ValueError
 
 
-def changes_height(data, total_changes=0):
+def changes_height(data):
     validation_data(data)
+
+    total_changes=0
     for line in data:
         _, last_height, new_height = line.rstrip("\n").split()
         total_changes += (int(new_height) - int(last_height))
+
     print(round(total_changes / len(data)))
 
 
-changes_height(lines)
+if __name__ == '__main__':
+    lines = stdin.readlines()
+    changes_height(lines)

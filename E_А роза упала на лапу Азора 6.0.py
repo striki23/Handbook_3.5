@@ -1,9 +1,8 @@
 from sys import stdin
 
-lines = stdin.readlines()
 
-
-def get_palindrome(data, palindrome=[]):
+def get_palindrome(data):
+    palindrome = []
     for line in data:
         for word in line.split():
             if word.lower() == word.lower()[::-1]:
@@ -11,4 +10,6 @@ def get_palindrome(data, palindrome=[]):
     print(*sorted(set(palindrome)), sep='\n')
 
 
-get_palindrome(lines)
+if __name__ == '__main__':
+    lines = stdin.readlines()
+    get_palindrome(lines)
