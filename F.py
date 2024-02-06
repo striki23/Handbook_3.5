@@ -1,7 +1,3 @@
-with open("cyrillic.txt", mode="r", encoding="UTF-8") as file_in:
-    lines = file_in.readlines()
-
-
 def transliterate(data):
     tabl_trans = {
         'А': 'A',
@@ -47,6 +43,9 @@ def transliterate(data):
                 trans_data += tabl_trans.get(char, char)
     return trans_data
 
+
+with open("cyrillic.txt", mode="r", encoding="UTF-8") as file_in:
+    lines = file_in.readlines()
 
 with open("transliteration.txt", mode="w", encoding="UTF-8") as file_out:
     file_out.writelines(transliterate(lines))
