@@ -14,3 +14,15 @@ for line in lines:
 
 with open(formatted_file, "w", encoding="UTF-8") as file_out:
     file_out.writelines(new_text)
+
+
+def work_with_files(mode='r'):
+    if mode.lower() == 'r':
+        pass
+    elif mode.lower() == 'w':
+        pass
+    elif mode.lower() == 'a':
+        pass
+
+
+

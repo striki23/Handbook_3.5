@@ -1,8 +1,7 @@
 from sys import stdin
 import json
 
-user_scores = stdin.readlines()
-user_scores = [line.rstrip('\n') for line in user_scores]
+user_scores = [line.rstrip('\n') for line in stdin.readlines()]
 
 with open('scoring.json', encoding="UTF-8") as file_in:
     records = json.load(file_in)

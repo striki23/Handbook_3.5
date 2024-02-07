@@ -11,8 +11,7 @@ for file, dict_data in tabl.items():
     with open(file, encoding="UTF-8") as file_in:
         records = json.load(file_in)
         for rec in records:
-            user = rec['name']
-            del rec['name']
+            user = rec.pop('name')
             dict_data[user] = rec
 
 for name, data in users_upd.items():

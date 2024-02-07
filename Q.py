@@ -1,8 +1,14 @@
 with open('secret.txt', encoding="UTF-8") as file_in:
-    lines = [ord(char) for char in ''.join(file_in.readlines())]
-    result = ''
-    for ord_char in lines:
-        if ord_char > 128:
-            ord_char = ord_char % 256
-        result += chr(ord_char)
-    print(result)
+    code_of_chars = [ord(char) for char in ''.join(file_in.readlines())]
+    decrypt = ''
+    for code in code_of_chars:
+        if code > 128:
+            code = code % 256
+        decrypt += chr(code)
+    print(decrypt)
+
+# 0.0.0.0
+# 255.255.255.255
+#
+# 32x - 01011010 01011010 01011010 01011010
+# 64x - 01011010 01011010 01011010 01011010 01011010 01011010 01011010 01011010

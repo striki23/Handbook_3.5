@@ -8,7 +8,9 @@ for file in files:
     with open(file, encoding="UTF-8") as file_in:
         lines = ''.join(file_in.readlines())
         while '&nbsp' in lines or '  ' in lines or '\n' in lines:
-            lines = lines.replace('&nbsp', '').replace('  ', ' ').replace('\n', ' ')
+            lines = lines.replace('&nbsp', ''
+                                  ).replace('  ', ' '
+                                            ).replace('\n', ' ')
         if search_line.strip().lower() in lines.lower():
             found += 1
             print(file)

@@ -6,7 +6,9 @@ lines = stdin.readlines()
 def comments_clean(data):
     for idx, line in enumerate(data):
         if '#' in line:
-            data[idx] = line[:line.index('#')].rstrip()
+            data[idx] = line[:line.index('#')]
+        data[idx] = data[idx].rstrip()
+
     print('\n'.join(data).lstrip('\n'))
 
 

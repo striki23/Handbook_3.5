@@ -10,8 +10,15 @@ def read_file(file):
         nums = []
         for line in lines:
             line = line.rstrip('\n').split()
-            nums.append(list(map(int, line)))
+            nums.append(line)
         return nums
+
+
+# TODO: Пример логики, как лучше решить.
+example = '650975472 591084323 629700 1504180 577023'.split()
+result = []
+for num in example:
+    temp = [1 if int(char) % 2 == 0 else 0 for char in num]
 
 
 def is_even(num):

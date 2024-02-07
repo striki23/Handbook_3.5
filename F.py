@@ -44,8 +44,7 @@ def transliterate(data):
     return trans_data
 
 
-with open("cyrillic.txt", mode="r", encoding="UTF-8") as file_in:
+with (open("cyrillic.txt", mode="r", encoding="UTF-8") as file_in,
+      open("transliteration.txt", mode="w", encoding="UTF-8") as file_out):
     lines = file_in.readlines()
-
-with open("transliteration.txt", mode="w", encoding="UTF-8") as file_out:
     file_out.writelines(transliterate(lines))
